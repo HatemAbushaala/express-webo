@@ -4,6 +4,8 @@ let app = new express()
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
+if (process.env.THROW) throw new Error("App crashed")
+
 var PORT = process.env.PORT || 5656
 app.listen(PORT, () => {
   console.log("Server started on port " + PORT)
