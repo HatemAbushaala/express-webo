@@ -13,7 +13,7 @@ app.listen(PORT, () => {
 // app.use('/barbers', require('./routes/barberRoutes'));
 
 app.get("/", (req, res) => {
-  res.send("hello from main page")
+  res.send("updated ")
 })
 
 app.get("*", (req, res) => {
