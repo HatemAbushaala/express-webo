@@ -15,7 +15,8 @@ app.listen(PORT, () => {
 // app.use('/barbers', require('./routes/barberRoutes'));
 
 app.get("/", (req, res) => {
-  res.send("updated ")
+  const envjson = JSON.stringify(process.env)
+  res.send(`app is running in port ${PORT} \n app env \n ${envjson}`)
 })
 
 app.get("*", (req, res) => {
