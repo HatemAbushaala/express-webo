@@ -15,7 +15,7 @@ app.listen(PORT, () => {
 // app.use('/barbers', require('./routes/barberRoutes'));
 
 app.get("/", (req, res) => {
-\  const envString = Object.keys(process.env).map(k=>{
+  const envString = Object.keys(process.env).map(k=>{
      return k + '=' + process.env[k] 
   }).join('\n')
   
