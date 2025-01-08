@@ -16,7 +16,11 @@ app.listen(PORT, () => {
 
 app.get("/", (req, res) => {
   const envjson = JSON.stringify(process.env)
-  res.send(`app is running in port ${PORT} \n app env \n ${envjson}`)
+  const envString = Object.keys(envjson).map(k=>{
+     return k + '=' + envjson[k] 
+  }).join('\n')
+  
+  res.send(`app is running in port ${PORT} \n node version ${process.version} \n app env \n ${envString}`)
 })
 
 app.get("*", (req, res) => {
