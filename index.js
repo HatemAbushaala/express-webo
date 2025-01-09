@@ -18,7 +18,6 @@ app.get("/", (req, res) => {
   const envString = Object.keys(process.env).map(k=>{
      return k + '=' + process.env[k] 
   }).join('\n')
-  
   res.send(`<h3>app is running in port ${PORT} </h3> \n <h4> node version ${process.version} </h4> \n <pre>app env \n ${envString}</pre>`)
 })
 
