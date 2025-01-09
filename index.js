@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
      return k + '=' + process.env[k] 
   }).join('\n')
   
-  res.send(`app is running in port ${PORT} \n node version ${process.version} \n app env \n ${envString}`)
+  res.send(`<p>app is running in port ${PORT} </p> \n <p> node version ${process.version} </p> \n <pre>app env \n ${envString}</pre>`)
 })
 
 app.get("*", (req, res) => {
