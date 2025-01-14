@@ -29,7 +29,9 @@ const html_content = `
 `
 console.log("build...",{
   api_url,
-  url
+  url,
+  node_version:process.version,
+  node_env:process.env.NODE_ENV
 })
 fs.writeFileSync(path.join(__dirname,'public/index.html'),html_content)
 console.log("build successfully")
