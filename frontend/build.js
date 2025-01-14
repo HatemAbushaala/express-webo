@@ -2,6 +2,8 @@ require("dotenv").config()
 const fs = require('fs')
 const path = require('path')
 const api_url = process.env.API_URL
+const url = process.env.URL
+
 
 const html_content = `
 <!DOCTYPE html>
@@ -25,6 +27,9 @@ const html_content = `
   </script>
 </html>
 `
-console.log("build...")
+console.log("build...",{
+  api_url,
+  url
+})
 fs.writeFileSync(path.join(__dirname,'public/index.html'),html_content)
 console.log("build successfully")
