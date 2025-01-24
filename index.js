@@ -33,6 +33,9 @@ app.get("/memory", async (req, res) => {
 
   return res.send("ok")
 })
+app.get("/crash", async (req, res) => {
+  throw new Error("App crashed")
+})
 app.get("/cpu", (req, res) => {
   const input = req.query.input
   const result = require("./lib/cpu-heavy-action")(input)
