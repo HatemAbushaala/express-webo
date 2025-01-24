@@ -16,7 +16,8 @@ app.listen(PORT, () => {
 // app.use('/barbers', require('./routes/barberRoutes'));
 
 const getFullUrl = () => {
-  return `http://localhost:${PORT}`
+  const url = process.env.URL ?? `http://localhost:${PORT}`
+  return url
 }
 
 const getRoutePath = (path) => {
