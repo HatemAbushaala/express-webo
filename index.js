@@ -20,7 +20,7 @@ const getFullUrl = () => {
 }
 
 const getRoutePath = (path) => {
-  return `${getFullUrl}/${path}`
+  return `${getFullUrl()}/${path}`
 }
 app.get("/", (req, res) => {
   const envString = Object.keys(process.env)
@@ -29,9 +29,9 @@ app.get("/", (req, res) => {
     })
     .join("\n")
   res.send(`<h3>app is running in port ${PORT} </h3> \n
-    crash: ${getRoutePath("crash")} \n
-    memory: ${getRoutePath("memory?delay=100")} \n
-    cpu: ${getRoutePath("cpu?input=1000")}
+    crash: <a href="${getRoutePath("crash")}">crash</a> \n
+    memory: <a href="${getRoutePath("memory?delay=100")}">memory</a> \n
+    cpu: <a href="${getRoutePath("cpu?input=1000")}">cpu</a> \n
     \n <h4> node version ${process.version} </h4> \n <pre>app env \n ${envString}</pre>`)
 })
 
