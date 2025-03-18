@@ -1,4 +1,2 @@
 update readme
-....
-.
-.new
+ 
